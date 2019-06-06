@@ -460,7 +460,7 @@ let SelectedCart = {
                         <thead style="background-color: #7e7e7e;">
                         <tr class="white-text">
                             <th>Acronym</th>
-                            <th>EGA Access</th>
+                            <th>EGA Accession</th>
                         </tr>
                         </thead>
                         <tbody>

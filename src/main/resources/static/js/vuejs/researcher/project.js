@@ -467,6 +467,12 @@ let Project = {
                                     <span style="font-weight: bold;">Please list your African collaborators</span>
                                     (this is required for biospecimens for the first 3 years after submission -see policy
                                     document on the website)
+                                    a) New or ongoing collaborative research work.
+                                    b) Recent (within the last two years) joint publications or inventions
+                                    c) Professional interactions (email exchange, official correspondence, meetings).
+                                    d) Training, supervision or mentoring of African scientists.
+                                    e) A letter from the African scientist attesting this/her involvement in a collaborative research with the requester.
+                                    f) Lectureship or fellowship of the requestor at an African-based institution.
                                 </p>
                                 <textarea id="collaborator-africa" class="materialize-textarea" v-model="dataForm.africanCollaborators"></textarea>
                             </div>
