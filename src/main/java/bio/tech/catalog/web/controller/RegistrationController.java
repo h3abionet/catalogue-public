@@ -171,7 +171,7 @@ public class RegistrationController {
                 File folder = new File(path);
                 FileUtils.deleteDirectory(folder);
             } else if (role.getName().equals("ROLE_USER")){
-                String path = ResourceUtils.getFile("classpath:static/users") + "/" + user.getUsername();
+                String path = "./users/" + user.getUsername();
                 File folder = new File(path);
                 FileUtils.deleteDirectory(folder);
             }

@@ -168,7 +168,7 @@ public class AppController {
         User user = userService.findUserByEmail(email);
         for (Role role : user.getRoles()) {
             if (role.getName().equals("ROLE_USER")) {
-                String path = ResourceUtils.getFile("classpath:static/users") + "/" + user.getUsername();
+                String path = "./users/" + user.getUsername();
                 File folder = new File(path);
                 folder.mkdir();
             }
