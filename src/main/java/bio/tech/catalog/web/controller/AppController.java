@@ -180,6 +180,14 @@ public class AppController {
     }
 
     /*
+     * All pages with url starting with "advance" when refreshed point to "filter.html" page
+     */
+    @RequestMapping(value={"/advance/**"})
+    public String filterPage() {
+        return "redirect:/filter.html";
+    }
+
+    /*
      * NON API
      */
 
