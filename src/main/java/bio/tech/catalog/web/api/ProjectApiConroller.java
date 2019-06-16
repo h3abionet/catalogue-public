@@ -136,7 +136,7 @@ public class ProjectApiConroller {
         Map<String, String> files = new LinkedHashMap<>();
         for (File file : dir.listFiles()) {
             if (file.getName().endsWith(".pdf")) {
-                files.put(file.getName(), "static/users/" + user.getUsername() + "/" + project.getProjectId());
+                files.put(file.getName(), "./users/" + user.getUsername() + "/" + project.getProjectId());
             }
         }
 
