@@ -27,7 +27,6 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -87,7 +86,7 @@ public class RegistrationController {
     }
 
     private String getAppUrl(HttpServletRequest request) {
-        return "http://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath();
+        return "https://catalog.h3africa.org" + request.getContextPath();
     }
 
     @GetMapping(value = "/registrationConfirm")
@@ -171,7 +170,7 @@ public class RegistrationController {
                 File folder = new File(path);
                 FileUtils.deleteDirectory(folder);
             } else if (role.getName().equals("ROLE_USER")){
-                String path = ResourceUtils.getFile("classpath:static/users") + "/" + user.getUsername();
+                String path = "./users/" + user.getUsername();
                 File folder = new File(path);
                 FileUtils.deleteDirectory(folder);
             }

@@ -168,7 +168,7 @@ public class AppController {
         User user = userService.findUserByEmail(email);
         for (Role role : user.getRoles()) {
             if (role.getName().equals("ROLE_USER")) {
-                String path = ResourceUtils.getFile("classpath:static/users") + "/" + user.getUsername();
+                String path = "./users/" + user.getUsername();
                 File folder = new File(path);
                 folder.mkdir();
             }
@@ -177,6 +177,14 @@ public class AppController {
         userService.saveRegisteredUser(user);
 
         return "redirect:/users";
+    }
+
+    /*
+     * All pages with url starting with "advance" when refreshed point to "filter.html" page
+     */
+    @RequestMapping(value={"/advance/**"})
+    public String filterPage() {
+        return "redirect:/filter.html";
     }
 
     /*

@@ -8,6 +8,7 @@ import bio.tech.catalog.persistence.model.User;
 import bio.tech.catalog.service.UserService;
 import com.alibaba.fastjson.JSONObject;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.InputStreamResource;
@@ -84,17 +85,14 @@ public class ProjectApiConroller {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/create/project", method = RequestMethod.POST)
-    public ResponseEntity<Object> createProject(@RequestParam("project") String obj,
-                                                @RequestParam("reports") MultipartFile[] reports) throws IOException {
-
+    private URI createOrEditProject(String obj, MultipartFile[] reports, boolean create) throws IOException{
         ObjectMapper mapper = new ObjectMapper();
         NeoProject project = mapper.readValue(obj, NeoProject.class);
         User user = authenticatedUser();
-        //  String path = "/home/hocine/my-projects/hcatalogue/users/" + user.getUsername() + "/" + project.getProjectId();
-        String path = ResourceUtils.getFile("classpath:static/users") + "/" + user.getUsername() + "/" + project.getProjectId();
+        String path = "./users/" + user.getUsername() + "/" + project.getProjectId();
         File folder = new File(path);
-        folder.mkdir();
+        if (create)
+            folder.mkdir();
         Path pathLocation = Paths.get(folder.getAbsolutePath());
         for(MultipartFile r : reports) {
             if (! r.isEmpty())
@@ -103,8 +101,23 @@ public class ProjectApiConroller {
         project.setUser(new ArrayList<>(Arrays.asList(user)));
         NeoProject savedProject = projectRepository.save(project);
 
-        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
+        return ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                 .buildAndExpand(savedProject.getId()).toUri();
+    }
+
+    @RequestMapping(value = "/create/project", method = RequestMethod.POST)
+    public ResponseEntity<Object> createProject(@RequestParam("project") String obj,
+                                                @RequestParam("reports") MultipartFile[] reports) throws IOException {
+
+        URI location = createOrEditProject(obj, reports, true);
+
+        return ResponseEntity.created(location).build();
+    }
+
+    @RequestMapping(value = "/edit/project", method = RequestMethod.POST)
+    public ResponseEntity<Object> editProject(@RequestParam("project") String obj,
+                                              @RequestParam("reports") MultipartFile[] reports) throws IOException {
+        URI location = createOrEditProject(obj, reports, false);
 
         return ResponseEntity.created(location).build();
     }
@@ -117,13 +130,13 @@ public class ProjectApiConroller {
 
         obj.put("project", project);
 
-//        String path = "/home/hocine/my-projects/hcatalogue/users/" + user.getUsername() + "/" + project.getProjectId();
-        String path = ResourceUtils.getFile("classpath:static/users").getPath() + "/" + user.getUsername() + "/" + project.getProjectId();
+        String path = "./users/" + user.getUsername() + "/" + project.getProjectId();
         File dir = new File(path);
+
         Map<String, String> files = new LinkedHashMap<>();
         for (File file : dir.listFiles()) {
             if (file.getName().endsWith(".pdf")) {
-                files.put(file.getName(), "static/users/" + user.getUsername() + "/" + project.getProjectId());
+                files.put(file.getName(), "./users/" + user.getUsername() + "/" + project.getProjectId());
             }
         }
 
@@ -132,36 +145,12 @@ public class ProjectApiConroller {
         return new ResponseEntity<>(obj, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/edit/project", method = RequestMethod.POST)
-    public ResponseEntity<Object> editProject(@RequestParam("project") String obj,
-                                              @RequestParam("reports") MultipartFile[] reports) throws IOException {
-
-        ObjectMapper mapper = new ObjectMapper();
-        NeoProject project = mapper.readValue(obj, NeoProject.class);
-        User user = authenticatedUser();
-//        String path = "/home/hocine/my-projects/hcatalogue/users/" + user.getUsername() + "/" + project.getProjectId();
-        String path = ResourceUtils.getFile("classpath:static/users").getPath() + "/" + user.getUsername() + "/" + project.getProjectId();
-        File folder = new File(path);
-        Path pathLocation = Paths.get(folder.getAbsolutePath());
-        for(MultipartFile r : reports) {
-            if (! r.isEmpty())
-                Files.copy(r.getInputStream(), pathLocation.resolve(r.getOriginalFilename()));
-        }
-        project.setUser(new ArrayList<>(Arrays.asList(user)));
-        NeoProject savedProject = projectRepository.save(project);
-
-        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-                .buildAndExpand(savedProject.getId()).toUri();
-
-        return ResponseEntity.created(location).build();
-    }
-
     @RequestMapping(value = "/project/delete/file", method = RequestMethod.POST)
     public ResponseEntity<JSONObject> deleteProjectFile(@RequestBody Map<String, String> body) throws IOException {
         JSONObject obj = new JSONObject();
-        String path = body.get("path");
 
-        File file = ResourceUtils.getFile("classpath:" + path);
+        String path = body.get("path");
+        File file = new File(path);
         String filename = file.getName();
         file.delete();
 
@@ -171,7 +160,7 @@ public class ProjectApiConroller {
     }
 
     @RequestMapping(value = "/remove/{id}", method = RequestMethod.GET)
-    public ResponseEntity<JSONObject> deleteProject(@PathVariable("id") String projectId) {
+    public ResponseEntity<JSONObject> deleteProject(@PathVariable("id") String projectId) throws IOException {
 
         User user = authenticatedUser();
         NeoProject project = projectRepository.projectByUsernameAndProjectId(user.getUsername(), projectId);
@@ -183,6 +172,10 @@ public class ProjectApiConroller {
         } else {
             projectRepository.deleteByProjectId(projectId);
             obj.put("message", "Project with id " + projectId + " has been deleted");
+
+            String path = "./users/" + user.getUsername() + "/" + projectId;
+            File folder = new File(path);
+            FileUtils.deleteDirectory(folder);
         }
 
         return new ResponseEntity<>(obj, HttpStatus.OK);
