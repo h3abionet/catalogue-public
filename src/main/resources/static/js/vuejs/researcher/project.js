@@ -12,14 +12,16 @@ let EditProject = {
             </div>
             <div class="row">
                 <form id="project-form" class="col m7" @submit="checkForm" method="post">
-                    <div class="row">
-                        <p v-if="errors.length">
-                            <b>Please correct the following error(s):</b>
-                            <ul>
-                                <li v-for="error in errors" style="color: #ff3d00">{{ error }}</li>
-                            </ul>
-                            <div v-if="errors.length" class="divider"></div>
-                        </p>
+                    
+                    <div class="row card red" id="card-alert" v-if="errors.length">
+                        <div class="card-content white-text">
+                            <p>
+                                <b>Please correct the following error(s):</b>
+                                <ul>
+                                    <li v-for="error in errors">{{ error }}</li>
+                                </ul>
+                            </p>
+                        </div>
                     </div>
                     <div class="row margin">
                         <div class="input-field col s12">
@@ -264,17 +266,69 @@ let EditProject = {
             }
 
             this.errors = [];
+
             if (!this.project.projectId) {
-                this.errors.push('Project Id is required');
+                this.errors.push("Project identifier is required");
             }
-            if(this.consentApprovalsNo === 'No') {
-                this.errors.push('Consent is not approved')
+
+            if (!this.project.projectTitle) {
+                this.errors.push("Project title is required");
             }
-            if(this.consentBioRequestsNo === 'No') {
-                this.errors.push('Consent biospecimen request is not approved')
+
+            if (!this.project.researchQuestion) {
+                this.errors.push("Research question (Project description) is required");
             }
-            if(this.consentDataRequestsNo === 'No') {
-                this.errors.push('Consent datasets request is not approved')
+
+            if (!this.project.researchBioRequests && !this.project.researchDataRequests) {
+                this.errors.push("No research description for Biospecimen and Dataset requests are provided");
+            }
+
+            /*if (!this.project.detailBioRequests && !this.project.detailDataRequests) {
+                this.errors.push("No details for Biospecimen and Dataset requests are provided");
+            }*/
+
+            if (this.project.researchBioRequests && !this.project.detailBioRequests) {
+                this.errors.push("No details for Biospecimen requests are provided");
+            }
+
+            if (this.project.detailBioRequests && !this.project.researchBioRequests) {
+                this.errors.push("No research description for Biospecimen requests is provided");
+            }
+
+            if (this.project.researchDataRequests && !this.project.detailDataRequests) {
+                this.errors.push("No details for Dataset requests are provided");
+            }
+
+            if (this.project.detailDataRequests && !this.project.researchDataRequests) {
+                this.errors.push("No research description for Dataset requests is provided");
+            }
+
+            if (!this.project.researchEthics) {
+                this.errors.push("Research ethics is required")
+            }
+
+            if (!this.project.benefitsAfrica) {
+                this.errors.push("The benefits of you project to Africa must be listed")
+            }
+
+            if (!this.project.africanCollaborators) {
+                this.errors.push("Your African collaborators must be listed")
+            }
+
+            if (!this.project.feasibility) {
+                this.errors.push("Resources, Feasibility and Expertise is required")
+            }
+
+            if(this.project.consentApprovals !== 'Yes') {
+                this.errors.push("Consent and approvals are not confirmed");
+            }
+
+            if(this.project.detailBioRequests && this.project.consentBioRequests !== 'Yes') {
+                this.errors.push('Consent and approvals for Biospecimen requests are not agreed')
+            }
+
+            if(this.project.detailDataRequests && this.project.consentDataRequests !== 'Yes') {
+                this.errors.push('Consent and approvals for Dataset requests are not agreed')
             }
 
             if (this.errors.length === 0) {
