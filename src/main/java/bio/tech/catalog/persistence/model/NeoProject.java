@@ -31,7 +31,7 @@ public class NeoProject {
     private String detailDataRequests;
     private boolean phenoDataRequested;
     private String researchEthics;
-    private String benifitsAfrica;
+    private String benefitsAfrica;
     private String africanCollaborators;
     private String feasibility;
     private String consentApprovals;
@@ -128,12 +128,12 @@ public class NeoProject {
         this.researchEthics = researchEthics;
     }
 
-    public String getBenifitsAfrica() {
-        return benifitsAfrica;
+    public String getBenefitsAfrica() {
+        return benefitsAfrica;
     }
 
-    public void setBenifitsAfrica(String benifitsAfrica) {
-        this.benifitsAfrica = benifitsAfrica;
+    public void setBenefitsAfrica(String benefitsAfrica) {
+        this.benefitsAfrica = benefitsAfrica;
     }
 
     public String getAfricanCollaborators() {

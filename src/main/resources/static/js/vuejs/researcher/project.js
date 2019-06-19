@@ -126,7 +126,7 @@ let EditProject = {
                                 the development of expertise and research capacity among African scientists. How do you see your
                                 proposed use of the data and biospecimens contributing to this?
                             </p>
-                            <textarea id="benifit-africa" class="materialize-textarea" v-model="project.benifitsAfrica"></textarea>
+                            <textarea id="benifit-africa" class="materialize-textarea" v-model="project.benefitsAfrica"></textarea>
                         </div>
                     </div>
                     <div class="row margin">
@@ -344,14 +344,15 @@ let Project = {
                 </div>
                 <div class="row">
                     <form id="project-form" class="col m10 push-m1" @submit="checkForm" method="post">
-                        <div class="row">
-                            <p v-if="errors.length">
-                                <b>Please correct the following error(s):</b>
-                                <ul>
-                                    <li v-for="error in errors" style="color: #ff3d00">{{ error }}</li>
-                                </ul>
-                                <div v-if="errors.length" class="divider"></div>
-                            </p>
+                        <div class="row card red col s9" id="card-alert" v-if="errors.length">
+                            <div class="card-content white-text">
+                                <p>
+                                    <b>Please correct the following error(s):</b>
+                                    <ul>
+                                        <li v-for="error in errors">{{ error }}</li>
+                                    </ul>
+                                </p>
+                            </div>
                         </div>
                         <div class="row margin">
                             <div class="input-field col s9">
@@ -458,7 +459,7 @@ let Project = {
                                     the development of expertise and research capacity among African scientists. How do you see your
                                     proposed use of the data and biospecimens contributing to this?
                                 </p>
-                                <textarea id="benifit-africa" class="materialize-textarea" v-model="dataForm.benifitsAfrica"></textarea>
+                                <textarea id="benifit-africa" class="materialize-textarea" v-model="dataForm.benefitsAfrica"></textarea>
                             </div>
                         </div>
                         <div class="row margin">
@@ -572,7 +573,7 @@ let Project = {
                 detailDataRequests: null,
                 phenoDataRequested: null,
                 researchEthics: null,
-                benifitsAfrica: null,
+                benefitsAfrica: null,
                 africanCollaborators: null,
                 feasibility: null,
                 consentApprovals: null,
@@ -588,16 +589,53 @@ let Project = {
             const data = new FormData();
             let reportFiles = document.querySelector('#file');
             data.append("project", JSON.stringify(this.dataForm));
-            // data.append("reports", imagefile.files[0]);
             for (let i = 0; i < reportFiles.files.length; i++) {
                 data.append("reports", reportFiles.files[i]);
             }
-            this.erros = [];
+
+            this.errors = [];
+
             if (!this.dataForm.projectId) {
-                this.errors.push('Project Id required');
+                this.errors.push("Project identifier is required");
             }
 
-            if (this.erros.length === 0) {
+            if (!this.dataForm.projectTitle) {
+                this.errors.push("Project title is required");
+            }
+
+            if (!this.dataForm.researchQuestion) {
+                this.errors.push("Research question (Project description) is required")
+            }
+
+            if (this.dataForm.detailBioRequests === null && this.dataForm.detailDataRequests === null) {
+                this.errors.push('No details are provided for Biospecimen and Dataset requests')
+            }
+
+            if (!this.dataForm.benefitsAfrica) {
+                this.errors.push("The benefits of you project to Africa must be listed")
+            }
+
+            if (!this.dataForm.africanCollaborators) {
+                this.errors.push("Your African collaborators must be listed")
+            }
+
+            if (!this.dataForm.feasibility) {
+                this.errors.push("Resources, Feasibility and Expertise is required")
+            }
+
+            if(this.dataForm.consentApprovals !== 'Yes') {
+                this.errors.push("Consent and approvals are not confirmed");
+            }
+
+            if(this.dataForm.detailBioRequests !== null && this.dataForm.consentBioRequests !== 'Yes') {
+                this.errors.push('Consent and approvals for Biospecimen requests are not agreed')
+            }
+
+            if(this.dataForm.detailDataRequests !== null && this.dataForm.consentDataRequests !== 'Yes') {
+                this.errors.push('Consent and approvals for Dataset requests are not agreed')
+            }
+
+            if (this.errors.length === 0) {
                 let self = this;
                 axios.post('/api/create/project',
                     data, {headers: {

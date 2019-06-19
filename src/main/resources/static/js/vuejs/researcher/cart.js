@@ -714,14 +714,14 @@ let Cart = {
     methods: {
         checkForm(e) {
             e.preventDefault();
-            this.erros = [];
+            this.errors = [];
             if (!this.cartId) {
                 this.errors.push('Cart Id required.');
             }
             if (!this.projectId) {
                 this.errors.push('Select or create a project before creating a cart.')
             }
-            if (this.erros.length === 0) {
+            if (this.errors.length === 0) {
                 var self = this;
                 axios.post('/api/cart/create',
                     {
