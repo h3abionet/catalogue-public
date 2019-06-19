@@ -12,14 +12,16 @@ let EditProject = {
             </div>
             <div class="row">
                 <form id="project-form" class="col m7" @submit="checkForm" method="post">
-                    <div class="row">
-                        <p v-if="errors.length">
-                            <b>Please correct the following error(s):</b>
-                            <ul>
-                                <li v-for="error in errors" style="color: #ff3d00">{{ error }}</li>
-                            </ul>
-                            <div v-if="errors.length" class="divider"></div>
-                        </p>
+                    
+                    <div class="row card red" id="card-alert" v-if="errors.length">
+                        <div class="card-content white-text">
+                            <p>
+                                <b>Please correct the following error(s):</b>
+                                <ul>
+                                    <li v-for="error in errors">{{ error }}</li>
+                                </ul>
+                            </p>
+                        </div>
                     </div>
                     <div class="row margin">
                         <div class="input-field col s12">
