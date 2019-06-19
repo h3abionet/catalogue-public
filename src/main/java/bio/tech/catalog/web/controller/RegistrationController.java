@@ -85,6 +85,8 @@ public class RegistrationController {
         return new GenericResponse("success");
     }
 
+
+    // TODO: the AppUrl is hardcoded (need to be set automatically)
     private String getAppUrl(HttpServletRequest request) {
         return "https://catalog.h3africa.org" + request.getContextPath();
     }
