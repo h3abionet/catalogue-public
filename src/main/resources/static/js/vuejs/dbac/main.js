@@ -879,7 +879,7 @@ let ProjectCart = {
                             the development of expertise and research capacity among African scientists. How do you see your
                             proposed use of the data and biospecimens contributing to this?
                         </p>
-                        <p class="blue-text text-darken-4">{{ project.benifitsAfrica }}</p>
+                        <p class="blue-text text-darken-4">{{ project.benefitsAfrica }}</p>
                     </div>
                     <div>
                         <p>5.1

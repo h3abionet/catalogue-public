@@ -22,7 +22,7 @@ public class NeoRequest {
     private String detailDataRequests;
     private boolean phenoDataRequested;
     private String researchEthics;
-    private String benifitsAfrica;
+    private String benefitsAfrica;
     private String africanCollaborators;
     private String feasibility;
     private String consentApprovals;
@@ -44,7 +44,7 @@ public class NeoRequest {
     public String getDetailDataRequests() { return detailDataRequests; }
     public boolean getPhenoDataRequested() { return phenoDataRequested; }
     public String getResearchEthics() { return researchEthics; }
-    public String getBenifitsAfrica() { return benifitsAfrica; }
+    public String getBenefitsAfrica() { return benefitsAfrica; }
     public String getAfricanCollaborators() { return africanCollaborators; }
     public String getFeasibility() { return feasibility; }
     public String getConsentApprovals() { return consentApprovals; }
@@ -82,8 +82,8 @@ public class NeoRequest {
     public void setResearchEthics(String researchEthics) {
         this.researchEthics = researchEthics;
     }
-    public void setBenifitsAfrica(String benifitsAfrica) {
-        this.benifitsAfrica = benifitsAfrica;
+    public void setBenefitsAfrica(String benefitsAfrica) {
+        this.benefitsAfrica = benefitsAfrica;
     }
     public void setAfricanCollaborators(String africanCollaborators) {
         this.africanCollaborators = africanCollaborators;
