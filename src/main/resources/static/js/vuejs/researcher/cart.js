@@ -490,8 +490,13 @@ let CartCard = {
                 .then(function (result) {
                     self.successMessage = result.data.successMessage;
                     self.failureMessage = result.data.failureMessage;
-                    if (self.successMessage !== null)
-                        self.$emit('get-carts')
+                    if (self.successMessage !== null) {
+                        self.$emit('get-carts');
+                        self.$emit('alert-success-message', self.successMessage);
+                    }
+                    if (self.failureMessage !== null) {
+                        self.$emit('alert-fail-message', self.failureMessage);
+                    }
                 });
         }
     }
@@ -535,18 +540,18 @@ let ProjectCarts = {
                       <div class="card-content white-text">
                         <p>SUCCESS : {{ successMessage }}.</p>
                       </div>
-                      <button class="close white-text" aria-label="Close" @click="closeMessage">
+                      <button class="close white-text" aria-label="Close" @click="closeSuccessMessage">
                         <span aria-hidden="true">×</span>
                       </button>
                 </div>
             </div>
             
             <div class="container" v-if="failureMessage !== null">
-                <div id="card-alert" class="card orange">
+                <div id="card-alert" class="card red">
                       <div class="card-content white-text">
                         <p>FAIL : {{ failureMessage }}.</p>
                       </div>
-                      <button style="box-shadow: none" class="close white-text" aria-label="Close" @click="closeMessage">
+                      <button style="box-shadow: none" class="close white-text" aria-label="Close" @click="closeFailMessage">
                         <span aria-hidden="true">×</span>
                       </button>
                 </div>
@@ -582,7 +587,9 @@ let ProjectCarts = {
                     <section id="plans" class="plans-container" v-for="i in loopLength">
                         <article class="col s12 m4 l4" v-for="j in 3">
                             <x-cart-card :card="cards[(i-1)*3+j-1]"
-                                         @get-carts="getCarts"></x-cart-card>
+                                         @get-carts="getCarts"
+                                         @alert-success-message="alertSuccessMessage"
+                                         @alert-fail-message="alertFailMessage"></x-cart-card>
                         </article>
                     </section>
                 </div>
@@ -612,8 +619,10 @@ let ProjectCarts = {
         'x-cart-card': CartCard
     },
     methods: {
-        closeMessage() {
+        closeSuccessMessage() {
             this.successMessage = null;
+        },
+        closeFailMessage() {
             this.failureMessage = null;
         },
         setCarts(cards) {
@@ -630,6 +639,12 @@ let ProjectCarts = {
                         self.setCarts(result.data['cart-queries']);
                     })
             }
+        },
+        alertFailMessage(message) {
+            this.failureMessage = message;
+        },
+        alertSuccessMessage(message) {
+            this.successMessage = message;
         }
     },
     created() {
