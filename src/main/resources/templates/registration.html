@@ -15,45 +15,45 @@
             <form action="/" method="post" enctype="utf8">
 
                 <h4>Registration Form</h4>
-                <div class="alert orange lighten-5 red-text text-darken-2">
+                <div class="orange lighten-5 red-text text-darken-2" style="padding: 1rem;margin: 1rem 0;border-radius: 2px;">
                     <strong><i class="fa fa-css3"></i></strong>&nbsp;
                     Sign up to H3Africa Catalogue database. All fields are required.
                 </div>
 
                 <div class="input-field" >
                     <label for="firstName" th:text="#{label.user.firstName}">first</label>
-                    <input id="firstName" name="firstName" class="validate" type="text" required="required"/>
-                    <span id="firstNameError" class="col s4" style="display:none"></span>
+                    <input id="firstName" name="firstName" class="validate" type="text" />
+                    <span id="firstNameError" class="orange lighten-5 col s4 red-text" style="display:none"></span>
                 </div>
                 <div class="input-field">
                     <label for="lastName" th:text="#{label.user.lastName}">last</label>
-                    <input id="lastName" name="lastName" class="validate" type="text" required="required"/>
-                    <span id="lastNameError" class="col s4" style="display:none"></span>
+                    <input id="lastName" name="lastName" class="validate" type="text" />
+                    <span id="lastNameError" class="orange lighten-5 col s4 red-text" style="display:none"></span>
                 </div>
                 <div class="input-field">
                     <label for="institutionName" th:text="#{label.user.institutionName}">last</label>
-                    <input id="institutionName" name="institutionName" class="validate" type="text" required="required"/>
-                    <span id="institutionNameError" class="col s4" style="display:none"></span>
+                    <input id="institutionName" name="institutionName" class="validate" type="text" />
+                    <span id="institutionNameError" class="orange lighten-5 col s4 red-text" style="display:none"></span>
                 </div>
                 <div class="input-field">
                     <label for="email" th:text="#{label.user.email}">email</label>
-                    <input id="email" name="email" class="validate" type="email" required="required"/>
-                    <span id="emailError" class="col s4" style="display:none"></span>
+                    <input id="email" name="email" class="validate" type="email" />
+                    <span id="emailError" class="orange lighten-5 col s4 red-text" style="display:none"></span>
                 </div>
                 <div class="input-field">
                     <label for="username" th:text="#{label.user.username}">username</label>
-                    <input id="username" name="username" class="validate" type="text" required="required"/>
-                    <span id="usernameError" class="col s4" style="display:none"></span>
+                    <input id="username" name="username" class="validate" type="text" />
+                    <span id="usernameError" class="orange lighten-5 col s4 red-text" style="display:none"></span>
                 </div>
                 <div class="input-field">
                     <label for="password" th:text="#{label.user.password}">password</label>
-                    <input id="password" name="password" type="password" class="validate" required="required"/>
-                    <span id="passwordError" class="col s4" style="display:none"></span>
+                    <input id="password" name="password" type="password" class="validate" />
+                    <span id="passwordError" class="orange lighten-5 col s4 red-text" style="display:none"></span>
                 </div>
                 <div class="input-field">
                     <label for="matchPassword" th:text="#{label.user.confirmPass}">confirm</label>
-                    <input id="matchPassword" name="matchingPassword" type="password" class="validate" required="required"/>
-                    <span id="globalError" class="col s4" style="display:none"></span>
+                    <input id="matchPassword" name="matchingPassword" type="password" class="validate" />
+                    <span id="globalError" class="orange lighten-5 col s4 red-text" style="display:none"></span>
                 </div>
                 <br/>
                 <button type="submit" class="btn waves-effect waves-light red center" th:text="#{label.form.submit}">submit</button>
