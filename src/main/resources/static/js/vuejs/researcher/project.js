@@ -166,7 +166,7 @@ let EditProject = {
                                 <label for="feasibility-yes">Yes, I obtained all approvals required</label>
                             </p>
                             <p>
-                                <input name="group1" id="feasibility-no" type="radio" value="No" v-model="consentApprovalsNo"/>
+                                <input name="group1" id="feasibility-no" type="radio" value="No" v-model="project.consentApprovals"/>
                                 <label for="feasibility-no">No</label>
                             </p>
                         </div>
@@ -185,7 +185,7 @@ let EditProject = {
                                 <label for="bioagree-yes">Yes</label>
                             </p>
                             <p>
-                                <input name="group2" id="bioagree-no" type="radio" value="No" v-model="consentBioRequestsNo"/>
+                                <input name="group2" id="bioagree-no" type="radio" value="No" v-model="project.consentBioRequests"/>
                                 <label for="bioagree-no">No</label>
                             </p>
                         </div>
@@ -202,7 +202,7 @@ let EditProject = {
                                 <label for="dataagree-yes">Yes</label>
                             </p>
                             <p>
-                                <input name="group3" id="dataagree-no" type="radio" value="No" v-model="consentDataRequestsNo"/>
+                                <input name="group3" id="dataagree-no" type="radio" value="No" v-model="project.consentDataRequests"/>
                                 <label for="dataagree-no">No</label>
                             </p>
                         </div>
@@ -505,7 +505,7 @@ let Project = {
                                     <label for="feasibility-yes">Yes, I obtained all approvals required</label>
                                 </p>
                                 <p>
-                                    <input name="group1" id="feasibility-no" type="radio" value="No" v-model="consentApprovalsNo"/>
+                                    <input name="group1" id="feasibility-no" type="radio" value="No" v-model="dataForm.consentApprovals"/>
                                     <label for="feasibility-no">No</label>
                                 </p>
                             </div>
@@ -524,7 +524,7 @@ let Project = {
                                     <label for="bioagree-yes">Yes</label>
                                 </p>
                                 <p>
-                                    <input name="group2" id="bioagree-no" type="radio" value="No" v-model="consentBioRequestsNo"/>
+                                    <input name="group2" id="bioagree-no" type="radio" value="No" v-model="dataForm.consentBioRequests"/>
                                     <label for="bioagree-no">No</label>
                                 </p>
                             </div>
@@ -541,7 +541,7 @@ let Project = {
                                     <label for="dataagree-yes">Yes</label>
                                 </p>
                                 <p>
-                                    <input name="group3" id="dataagree-no" type="radio" value="No" v-model="consentDataRequestsNo"/>
+                                    <input name="group3" id="dataagree-no" type="radio" value="No" v-model="dataForm.consentDataRequests"/>
                                     <label for="dataagree-no">No</label>
                                 </p>
                             </div>
@@ -604,11 +604,35 @@ let Project = {
             }
 
             if (!this.dataForm.researchQuestion) {
-                this.errors.push("Research question (Project description) is required")
+                this.errors.push("Research question (Project description) is required");
             }
 
-            if (this.dataForm.detailBioRequests === null && this.dataForm.detailDataRequests === null) {
-                this.errors.push('No details are provided for Biospecimen and Dataset requests')
+            if (!this.dataForm.researchBioRequests && !this.dataForm.researchDataRequests) {
+                this.errors.push("No research description for Biospecimen and Dataset requests are provided");
+            }
+
+            /*if (!this.dataForm.detailBioRequests && !this.dataForm.detailDataRequests) {
+                this.errors.push("No details for Biospecimen and Dataset requests are provided");
+            }*/
+
+            if (this.dataForm.researchBioRequests && !this.dataForm.detailBioRequests) {
+                this.errors.push("No details for Biospecimen requests are provided");
+            }
+
+            if (this.dataForm.detailBioRequests && !this.dataForm.researchBioRequests) {
+                this.errors.push("No research description for Biospecimen requests is provided");
+            }
+
+            if (this.dataForm.researchDataRequests && !this.dataForm.detailDataRequests) {
+                this.errors.push("No details for Dataset requests are provided");
+            }
+
+            if (this.dataForm.detailDataRequests && !this.dataForm.researchDataRequests) {
+                this.errors.push("No research description for Dataset requests is provided");
+            }
+
+            if (!this.dataForm.researchEthics) {
+                this.errors.push("Research ethics is required")
             }
 
             if (!this.dataForm.benefitsAfrica) {
@@ -627,11 +651,11 @@ let Project = {
                 this.errors.push("Consent and approvals are not confirmed");
             }
 
-            if(this.dataForm.detailBioRequests !== null && this.dataForm.consentBioRequests !== 'Yes') {
+            if(this.dataForm.detailBioRequests && this.dataForm.consentBioRequests !== 'Yes') {
                 this.errors.push('Consent and approvals for Biospecimen requests are not agreed')
             }
 
-            if(this.dataForm.detailDataRequests !== null && this.dataForm.consentDataRequests !== 'Yes') {
+            if(this.dataForm.detailDataRequests && this.dataForm.consentDataRequests !== 'Yes') {
                 this.errors.push('Consent and approvals for Dataset requests are not agreed')
             }
 
