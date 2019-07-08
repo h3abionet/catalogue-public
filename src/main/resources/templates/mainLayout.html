@@ -97,42 +97,6 @@
 </main>
 
 <footer class="page-footer" th:if="${#authorization.expression('isAnonymous()')} or  ${#httpServletRequest.requestURI=='/updatePassword.html'} or ${#httpServletRequest.requestURI=='/changePassword.html'}">
-    <div class="container">
-        <div class="row">
-            <div class="col m6 s12">
-                <h4 style="font-weight: bold;" class="blue-grey-text">
-                    <a href="http://www.h3abionet.org">
-                        <img th:src="@{/static/img/bionetlogo.png}" alt="" class="valign" style="height: 9vh"/>
-                    </a>
-                    H3ABioNet
-                </h4>
-                <h6 style="margin-top: -5vh; margin-left: 4.8vw; font-weight: bold;" class="grey-text text-accent-4">
-                    Pan African Bioinformatics Network for H3Africa
-                </h6>
-            </div>
-            <div class="col m2 offset-m2 s6">
-                <h6>About</h6>
-                <ul>
-                    <li><a href="http://h3africa-catalogue.readthedocs.io/en/latest/"
-                           class="blue-text text-darken-1">Help</a></li>
-                    <li><a th:href="@{/contact}" class="blue-text text-darken-1">Contact</a></li>
-                </ul>
-            </div>
-            <div class="col m2 s6">
-                <h6>Developer</h6>
-                <ul>
-                    <li>
-                        <a href="https://github.com/h3abionet/h3acatalog.git" class="blue-text text-darken-1">
-                        Source</a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/h3abionet/h3acatalog/issues" class="blue-text text-darken-1">
-                            Contribute</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
     <div class="footer-copyright">
         <div class="container">Developer <a href="http://h3africa-catalogue.readthedocs.io/en/latest/" class="white-text" style="font-weight: bold">Documentation</a></div>
         <div class="container">Built by <a href="http://h3abionet.org" class="white-text" style="font-weight: bold">H3ABioNet</a></div>
