@@ -88,20 +88,6 @@ let EditProject = {
                     <div class="row margin">
                         <div class="input-field col s12">
                             <p>4.
-                                <span style="font-weight: bold;">Details of data/biospecimens requested</span></p>
-                            <p>4.1
-                                <span style="font-weight: bold;"> For Biospecimen requests</span> The project biospecimen applied for
-                            </p>
-                            <textarea id="biospec-details" class="materialize-textarea" v-model="project.detailBioRequests"></textarea>
-                            <p>4.2
-                                <span style="font-weight: bold;"> For Data requests</span> The project data applied for
-                            </p>
-                            <textarea id="data-details" class="materialize-textarea" v-model="project.detailDataRequests"></textarea>
-                        </div>
-                    </div>
-                    <div class="row margin">
-                        <div class="input-field col s12">
-                            <p>4.3
                                 <span style="font-weight: bold;">Please tick the box below, if you request the associated phenotype
                             data</span>
                             </p>
@@ -283,26 +269,6 @@ let EditProject = {
                 this.errors.push("No research description for Biospecimen and Dataset requests are provided");
             }
 
-            /*if (!this.project.detailBioRequests && !this.project.detailDataRequests) {
-                this.errors.push("No details for Biospecimen and Dataset requests are provided");
-            }*/
-
-            if (this.project.researchBioRequests && !this.project.detailBioRequests) {
-                this.errors.push("No details for Biospecimen requests are provided");
-            }
-
-            if (this.project.detailBioRequests && !this.project.researchBioRequests) {
-                this.errors.push("No research description for Biospecimen requests is provided");
-            }
-
-            if (this.project.researchDataRequests && !this.project.detailDataRequests) {
-                this.errors.push("No details for Dataset requests are provided");
-            }
-
-            if (this.project.detailDataRequests && !this.project.researchDataRequests) {
-                this.errors.push("No research description for Dataset requests is provided");
-            }
-
             if (!this.project.researchEthics) {
                 this.errors.push("Research ethics is required")
             }
@@ -323,11 +289,11 @@ let EditProject = {
                 this.errors.push("Consent and approvals are not confirmed");
             }
 
-            if(this.project.detailBioRequests && this.project.consentBioRequests !== 'Yes') {
+            if(this.project.researchBioRequests && this.project.consentBioRequests !== 'Yes') {
                 this.errors.push('Consent and approvals for Biospecimen requests are not agreed')
             }
 
-            if(this.project.detailDataRequests && this.project.consentDataRequests !== 'Yes') {
+            if(this.project.researchDataRequests && this.project.consentDataRequests !== 'Yes') {
                 this.errors.push('Consent and approvals for Dataset requests are not agreed')
             }
 
@@ -473,20 +439,6 @@ let Project = {
                         <div class="row margin">
                             <div class="input-field col s9">
                                 <p>4.
-                                    <span style="font-weight: bold;">Details of data/biospecimens requested</span></p>
-                                <p>4.1
-                                    <span style="font-weight: bold;"> For Biospecimen requests</span> The project biospecimen applied for
-                                </p>
-                                <textarea id="biospec-details" class="materialize-textarea" v-model="dataForm.detailBioRequests"></textarea>
-                                <p>4.2
-                                    <span style="font-weight: bold;"> For Data requests</span> The project data applied for
-                                </p>
-                                <textarea id="data-details" class="materialize-textarea" v-model="dataForm.detailDataRequests"></textarea>
-                            </div>
-                        </div>
-                        <div class="row margin">
-                            <div class="input-field col s9">
-                                <p>4.3
                                     <span style="font-weight: bold;">Please tick the box below, if you request the associated phenotype
                                 data</span>
                                 </p>
@@ -662,27 +614,7 @@ let Project = {
             }
 
             if (!this.dataForm.researchBioRequests && !this.dataForm.researchDataRequests) {
-                this.errors.push("No research description for Biospecimen and Dataset requests are provided");
-            }
-
-            /*if (!this.dataForm.detailBioRequests && !this.dataForm.detailDataRequests) {
-                this.errors.push("No details for Biospecimen and Dataset requests are provided");
-            }*/
-
-            if (this.dataForm.researchBioRequests && !this.dataForm.detailBioRequests) {
-                this.errors.push("No details for Biospecimen requests are provided");
-            }
-
-            if (this.dataForm.detailBioRequests && !this.dataForm.researchBioRequests) {
-                this.errors.push("No research description for Biospecimen requests is provided");
-            }
-
-            if (this.dataForm.researchDataRequests && !this.dataForm.detailDataRequests) {
-                this.errors.push("No details for Dataset requests are provided");
-            }
-
-            if (this.dataForm.detailDataRequests && !this.dataForm.researchDataRequests) {
-                this.errors.push("No research description for Dataset requests is provided");
+                this.errors.push("No research description for Biospecimen and/or Dataset requests are provided");
             }
 
             if (!this.dataForm.researchEthics) {
@@ -705,11 +637,11 @@ let Project = {
                 this.errors.push("Consent and approvals are not confirmed");
             }
 
-            if(this.dataForm.detailBioRequests && this.dataForm.consentBioRequests !== 'Yes') {
+            if(this.dataForm.researchBioRequests && this.dataForm.consentBioRequests !== 'Yes') {
                 this.errors.push('Consent and approvals for Biospecimen requests are not agreed')
             }
 
-            if(this.dataForm.detailDataRequests && this.dataForm.consentDataRequests !== 'Yes') {
+            if(this.dataForm.researchDataRequests && this.dataForm.consentDataRequests !== 'Yes') {
                 this.errors.push('Consent and approvals for Dataset requests are not agreed')
             }
 
@@ -839,6 +771,37 @@ let ProjectCards = {
                     </div>
                 </div>
             </div>
+            <div class="container" v-if="projectId === null || cartId === null">
+                <div class="row" style="margin: auto 0.3rem auto 0.1rem">
+                    <div id="card-alert" class="card red lighten-4">
+                        <div class="card-content text-darken-1">
+                            <span class="card-title pink-text darken-1">Follow these steps to request biospecimens and datasets</span>
+                            <p style="line-height: 24px; font-size: 16px">
+                                1. <router-link class="white-text round-blue" to="/advance/projects/project">Create</router-link> and/or
+                                <router-link class="white-text round-blue" to="/advance/projects">Select</router-link> a project
+                            </p>
+                            <p style="line-height: 24px; font-size: 16px">
+                                2. <router-link class="white-text round-blue" to="/advance/carts/cart">Create</router-link> and/or
+                                <router-link class="white-text round-blue" to="/advance/carts">Select</router-link> a cart
+                            </p>
+                            <p style="line-height: 24px; font-size: 16px">
+                                3. <router-link class="white-text round-blue" to="/advance/carts">Filter</router-link> the catalogue
+                                and add biospecimens and datasets to a selected cart
+                            </p>
+                            <p style="line-height: 24px; font-size: 16px">
+                                4. View <router-link class="white-text round-blue" to="/advance/cart">Your Cart</router-link> to
+                                edit and send a request to the DBAC
+                            </p>
+                            <div class="divider white" style="margin-top: 10px"></div>
+                            <p style="line-height: 24px; font-size: 16px">
+                                <i class="material-icons orange-text">warning</i> If you refresh your browser or you exit your workspace
+                                (Filter, Projects, Carts, Your Cart), the results and parameters of your query will be lost.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="container">
                 <p class="caption">
                     Create, edit, select and delete projects
@@ -884,6 +847,14 @@ let ProjectCards = {
         }
     },
     computed: {
+        cartId() {
+            if (state.selectedCart !== null)
+                return state.selectedCart.cartId;
+            return null;
+        },
+        projectId() {
+            return state.projectId;
+        },
         loopLength() {
             return Math.floor((this.cards.length -1) / 3 + 1);
         }
@@ -926,8 +897,10 @@ let Projects = {
             } else {
                 this.selectedProjectId = projectId;
             }
-
             this.$parent.setProjectId(this.selectedProjectId);
+            if (this.selectedProjectId !== null) {
+                this.$router.push("/advance/carts");
+            }
         },
         getProjects() {
             var self = this;
