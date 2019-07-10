@@ -379,6 +379,26 @@ span.summary-study {
     vertical-align: middle;
 }
 
+.round-blue {
+    background-color: blue;
+    border-radius: 9px;
+    color: white;
+    display: inline-block;
+    line-height: 1;
+    font-weight: bold;
+    margin-left: 4px;
+    min-width: 24px;
+    opacity: 1;
+    padding-bottom: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 4px;
+    text-align: center;
+    -webkit-transition: background-color 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+    transition: background-color 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+    vertical-align: middle;
+}
+
 #slide-out {
     top: 160px;
 }

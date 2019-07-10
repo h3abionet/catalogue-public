@@ -52,13 +52,6 @@
                     </div>
                 </li>
                 <li>
-                    <router-link class="" to="/advance/cart">
-                        <i class="material-icons">add_shopping_cart</i> Your Cart
-                        <span class="cart-amount" style="margin-left: 2rem;">{{ nbRowSelected }}</span>
-                    </router-link>
-                </li>
-                <li><div class="divider"></div></li>
-                <li>
                     <router-link to="/filter.html">
                         <i class="material-icons">filter_list</i> Filter
                     </router-link>
@@ -71,6 +64,13 @@
                 <li>
                     <router-link to="/advance/carts">
                         <i class="material-icons">shopping_cart</i> Carts
+                    </router-link>
+                </li>
+                <li><div class="divider"></div></li>
+                <li>
+                    <router-link class="" to="/advance/cart">
+                        <i class="material-icons">add_shopping_cart</i> Your Cart
+                        <span class="cart-amount" style="margin-left: 2rem;">{{ nbRowSelected }}</span>
                     </router-link>
                 </li>
             </ul>
@@ -93,16 +93,34 @@
             </div>
             <div class="container" v-if="cartId === null">
                 <div class="row" style="margin: auto 0.3rem auto 0.1rem">
-                    <div id="card-alert" class="card pink lighten-5">
+                    <div id="card-alert" class="card red lighten-4">
 
-                        <div class="card-content pink-text darken-1">
-                            <span class="card-title pink-text darken-1">No cart is selected</span>
-                            <p>Select or create a project and a cart before using this search module.</p>
+                        <div class="card-content text-darken-1">
+                            <span class="card-title pink-text darken-1">Follow these steps to request biospecimens and datasets</span>
+                            <p style="line-height: 24px; font-size: 16px">
+                                1. <router-link class="white-text round-blue" to="/advance/projects/project">Create</router-link> and/or
+                                <router-link class="white-text round-blue" to="/advance/projects">Select</router-link> a project
+                            </p>
+                            <p style="line-height: 24px; font-size: 16px">
+                                2. <router-link class="white-text round-blue" to="/advance/carts/cart">Create</router-link> and/or
+                                <router-link class="white-text round-blue" to="/advance/carts">Select</router-link> a cart
+                            </p>
+                            <p style="line-height: 24px; font-size: 16px">
+                                3. <router-link class="white-text round-blue" to="/advance/carts">Filter</router-link> the catalogue,
+                                and add biospecimens and dataset to a selected cart
+                            </p>
+                            <p style="line-height: 24px; font-size: 16px">
+                                4. View <router-link class="white-text round-blue" to="/advance/cart">Your Cart</router-link> to
+                                edit and send a request to the DBAC
+                            </p>
+                            <div class="divider white" style="margin-top: 10px"></div>
+                            <p><i class="material-icons orange-text">warning</i> If you refresh your browser or you exit your workspace
+                                (Filter, Projects, Carts, Your Cart), the results and parameters of your query will be lost.</p>
                         </div>
-                        <div class="card-action pink lighten-4">
+                        <!--<div class="card-action pink lighten-4">
                             <router-link class="pink-text" to="/advance/carts">Ok</router-link>
                             <a th:href="@{/logout}" class="pink-text">Cancel</a>
-                        </div>
+                        </div>-->
 
                     </div>
                 </div>

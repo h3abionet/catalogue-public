@@ -27,8 +27,6 @@ public class NeoProject {
     private String researchQuestion;
     private String researchBioRequests;
     private String researchDataRequests;
-    private String detailBioRequests;
-    private String detailDataRequests;
     private boolean phenoDataRequested;
     private String researchEthics;
     private String benefitsAfrica;
@@ -94,22 +92,6 @@ public class NeoProject {
 
     public void setResearchDataRequests(String researchDataRequests) {
         this.researchDataRequests = researchDataRequests;
-    }
-
-    public String getDetailBioRequests() {
-        return detailBioRequests;
-    }
-
-    public void setDetailBioRequests(String detailBioRequests) {
-        this.detailBioRequests = detailBioRequests;
-    }
-
-    public String getDetailDataRequests() {
-        return detailDataRequests;
-    }
-
-    public void setDetailDataRequests(String detailDataRequests) {
-        this.detailDataRequests = detailDataRequests;
     }
 
     public boolean isPhenoDataRequested() {

@@ -88,20 +88,6 @@ let EditProject = {
                     <div class="row margin">
                         <div class="input-field col s12">
                             <p>4.
-                                <span style="font-weight: bold;">Details of data/biospecimens requested</span></p>
-                            <p>4.1
-                                <span style="font-weight: bold;"> For Biospecimen requests</span> The project biospecimen applied for
-                            </p>
-                            <textarea id="biospec-details" class="materialize-textarea" v-model="project.detailBioRequests"></textarea>
-                            <p>4.2
-                                <span style="font-weight: bold;"> For Data requests</span> The project data applied for
-                            </p>
-                            <textarea id="data-details" class="materialize-textarea" v-model="project.detailDataRequests"></textarea>
-                        </div>
-                    </div>
-                    <div class="row margin">
-                        <div class="input-field col s12">
-                            <p>4.3
                                 <span style="font-weight: bold;">Please tick the box below, if you request the associated phenotype
                             data</span>
                             </p>
@@ -283,26 +269,6 @@ let EditProject = {
                 this.errors.push("No research description for Biospecimen and Dataset requests are provided");
             }
 
-            /*if (!this.project.detailBioRequests && !this.project.detailDataRequests) {
-                this.errors.push("No details for Biospecimen and Dataset requests are provided");
-            }*/
-
-            if (this.project.researchBioRequests && !this.project.detailBioRequests) {
-                this.errors.push("No details for Biospecimen requests are provided");
-            }
-
-            if (this.project.detailBioRequests && !this.project.researchBioRequests) {
-                this.errors.push("No research description for Biospecimen requests is provided");
-            }
-
-            if (this.project.researchDataRequests && !this.project.detailDataRequests) {
-                this.errors.push("No details for Dataset requests are provided");
-            }
-
-            if (this.project.detailDataRequests && !this.project.researchDataRequests) {
-                this.errors.push("No research description for Dataset requests is provided");
-            }
-
             if (!this.project.researchEthics) {
                 this.errors.push("Research ethics is required")
             }
@@ -323,11 +289,11 @@ let EditProject = {
                 this.errors.push("Consent and approvals are not confirmed");
             }
 
-            if(this.project.detailBioRequests && this.project.consentBioRequests !== 'Yes') {
+            if(this.project.researchBioRequests && this.project.consentBioRequests !== 'Yes') {
                 this.errors.push('Consent and approvals for Biospecimen requests are not agreed')
             }
 
-            if(this.project.detailDataRequests && this.project.consentDataRequests !== 'Yes') {
+            if(this.project.researchDataRequests && this.project.consentDataRequests !== 'Yes') {
                 this.errors.push('Consent and approvals for Dataset requests are not agreed')
             }
 
@@ -473,20 +439,6 @@ let Project = {
                         <div class="row margin">
                             <div class="input-field col s9">
                                 <p>4.
-                                    <span style="font-weight: bold;">Details of data/biospecimens requested</span></p>
-                                <p>4.1
-                                    <span style="font-weight: bold;"> For Biospecimen requests</span> The project biospecimen applied for
-                                </p>
-                                <textarea id="biospec-details" class="materialize-textarea" v-model="dataForm.detailBioRequests"></textarea>
-                                <p>4.2
-                                    <span style="font-weight: bold;"> For Data requests</span> The project data applied for
-                                </p>
-                                <textarea id="data-details" class="materialize-textarea" v-model="dataForm.detailDataRequests"></textarea>
-                            </div>
-                        </div>
-                        <div class="row margin">
-                            <div class="input-field col s9">
-                                <p>4.3
                                     <span style="font-weight: bold;">Please tick the box below, if you request the associated phenotype
                                 data</span>
                                 </p>
@@ -662,27 +614,7 @@ let Project = {
             }
 
             if (!this.dataForm.researchBioRequests && !this.dataForm.researchDataRequests) {
-                this.errors.push("No research description for Biospecimen and Dataset requests are provided");
-            }
-
-            /*if (!this.dataForm.detailBioRequests && !this.dataForm.detailDataRequests) {
-                this.errors.push("No details for Biospecimen and Dataset requests are provided");
-            }*/
-
-            if (this.dataForm.researchBioRequests && !this.dataForm.detailBioRequests) {
-                this.errors.push("No details for Biospecimen requests are provided");
-            }
-
-            if (this.dataForm.detailBioRequests && !this.dataForm.researchBioRequests) {
-                this.errors.push("No research description for Biospecimen requests is provided");
-            }
-
-            if (this.dataForm.researchDataRequests && !this.dataForm.detailDataRequests) {
-                this.errors.push("No details for Dataset requests are provided");
-            }
-
-            if (this.dataForm.detailDataRequests && !this.dataForm.researchDataRequests) {
-                this.errors.push("No research description for Dataset requests is provided");
+                this.errors.push("No research description for Biospecimen and/or Dataset requests are provided");
             }
 
             if (!this.dataForm.researchEthics) {
@@ -705,11 +637,11 @@ let Project = {
                 this.errors.push("Consent and approvals are not confirmed");
             }
 
-            if(this.dataForm.detailBioRequests && this.dataForm.consentBioRequests !== 'Yes') {
+            if(this.dataForm.researchBioRequests && this.dataForm.consentBioRequests !== 'Yes') {
                 this.errors.push('Consent and approvals for Biospecimen requests are not agreed')
             }
 
-            if(this.dataForm.detailDataRequests && this.dataForm.consentDataRequests !== 'Yes') {
+            if(this.dataForm.researchDataRequests && this.dataForm.consentDataRequests !== 'Yes') {
                 this.errors.push('Consent and approvals for Dataset requests are not agreed')
             }
 
