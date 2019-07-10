@@ -496,6 +496,10 @@ let CartCard = {
                 state.selectedRows = null;
                 state.nbRowSelected = 0;
             }
+
+            if (state.selectedCart !== null) {
+                this.$router.push("/filter.html");
+            }
         },
         deleteCart() {
             let self = this;
