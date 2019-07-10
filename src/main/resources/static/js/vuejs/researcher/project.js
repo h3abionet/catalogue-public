@@ -771,6 +771,37 @@ let ProjectCards = {
                     </div>
                 </div>
             </div>
+            <div class="container" v-if="projectId === null || cartId === null">
+                <div class="row" style="margin: auto 0.3rem auto 0.1rem">
+                    <div id="card-alert" class="card red lighten-4">
+                        <div class="card-content text-darken-1">
+                            <span class="card-title pink-text darken-1">Follow these steps to request biospecimens and datasets</span>
+                            <p style="line-height: 24px; font-size: 16px">
+                                1. <router-link class="white-text round-blue" to="/advance/projects/project">Create</router-link> and/or
+                                <router-link class="white-text round-blue" to="/advance/projects">Select</router-link> a project
+                            </p>
+                            <p style="line-height: 24px; font-size: 16px">
+                                2. <router-link class="white-text round-blue" to="/advance/carts/cart">Create</router-link> and/or
+                                <router-link class="white-text round-blue" to="/advance/carts">Select</router-link> a cart
+                            </p>
+                            <p style="line-height: 24px; font-size: 16px">
+                                3. <router-link class="white-text round-blue" to="/advance/carts">Filter</router-link> the catalogue
+                                and add biospecimens and datasets to a selected cart
+                            </p>
+                            <p style="line-height: 24px; font-size: 16px">
+                                4. View <router-link class="white-text round-blue" to="/advance/cart">Your Cart</router-link> to
+                                edit and send a request to the DBAC
+                            </p>
+                            <div class="divider white" style="margin-top: 10px"></div>
+                            <p style="line-height: 24px; font-size: 16px">
+                                <i class="material-icons orange-text">warning</i> If you refresh your browser or you exit your workspace
+                                (Filter, Projects, Carts, Your Cart), the results and parameters of your query will be lost.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="container">
                 <p class="caption">
                     Create, edit, select and delete projects
@@ -816,6 +847,14 @@ let ProjectCards = {
         }
     },
     computed: {
+        cartId() {
+            if (state.selectedCart !== null)
+                return state.selectedCart.cartId;
+            return null;
+        },
+        projectId() {
+            return state.projectId;
+        },
         loopLength() {
             return Math.floor((this.cards.length -1) / 3 + 1);
         }
