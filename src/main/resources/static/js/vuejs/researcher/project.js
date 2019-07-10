@@ -858,8 +858,10 @@ let Projects = {
             } else {
                 this.selectedProjectId = projectId;
             }
-
             this.$parent.setProjectId(this.selectedProjectId);
+            if (this.selectedProjectId !== null) {
+                this.$router.push("/advance/carts");
+            }
         },
         getProjects() {
             var self = this;
