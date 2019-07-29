@@ -29,7 +29,6 @@
                 <li class="user-details" style="border-bottom: 1px solid #B83F0D; height: 6rem">
                     <div class="row">
                         <div class="col s4 m4 l4">
-                            <img class="circle responsive-img valign profile-image" th:src="@{/static/img/login.png}" />
                         </div>
                         <div class="col s8 m8 l8">
                             <a class="btn-flat waves-effect waves-light profile-btn" href=""><b>{{ user.name }}</b></a>
@@ -49,11 +48,6 @@
                 <li>
                     <router-link to="/dbac/rejected">
                         <i class="material-icons">clear</i> Rejected Carts
-                    </router-link>
-                </li>
-                <li>
-                    <router-link to="">
-                        <i class="material-icons">clear</i> Export to PDF
                     </router-link>
                 </li>
             </ul>

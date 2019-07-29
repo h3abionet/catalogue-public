@@ -178,6 +178,14 @@ main {
 
 ===============================*/
 
+@media print
+{
+    .custom-nav, .custom-nav *
+    {
+        display: none !important;
+    }
+}
+
 div.show-search-form{
     top: 90px;
     right: 5px;
