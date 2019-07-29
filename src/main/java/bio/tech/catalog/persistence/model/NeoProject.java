@@ -1,6 +1,7 @@
 package bio.tech.catalog.persistence.model;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.neo4j.ogm.annotation.GraphId;
@@ -13,6 +14,7 @@ import java.util.List;
 
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 @NodeEntity
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class NeoProject {
 
     @GraphId
