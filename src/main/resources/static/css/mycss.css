@@ -184,6 +184,10 @@ main {
     {
         display: none !important;
     }
+    a[href]:after {
+    content: none !important;
+}
+ #dbac_aside * { display:none; }
 }
 
 div.show-search-form{
