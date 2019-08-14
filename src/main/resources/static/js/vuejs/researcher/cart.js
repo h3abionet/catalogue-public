@@ -207,7 +207,8 @@ let CartContent = {
                 <div class="row" style="margin: auto 0.3rem auto 0.1rem">
                     <div id="card-alert" class="card red lighten-4">
                         <div class="card-content text-darken-1">
-                            <span class="card-title pink-text darken-1">Follow these steps to request biospecimens and datasets</span>
+                              <span class="card-title pink-text darken-1">1) Do an advanced search using the search options below or</span>
+                              <span class="card-title pink-text darken-1">2) Request access to data and/or biospecimens by following these steps:</span>
                             <p style="line-height: 24px; font-size: 16px">
                                 1. <router-link class="white-text round-blue" to="/advance/projects/project">Create</router-link> and/or
                                 <router-link class="white-text round-blue" to="/advance/projects">Select</router-link> a project
@@ -539,7 +540,8 @@ let ProjectCarts = {
                 <div class="row" style="margin: auto 0.3rem auto 0.1rem">
                     <div id="card-alert" class="card red lighten-4">
                         <div class="card-content text-darken-1">
-                            <span class="card-title pink-text darken-1">Follow these steps to request biospecimens and datasets</span>
+                                                        <span class="card-title pink-text darken-1">1) Do an advanced search using the search options below or</span>
+                                                        <span class="card-title pink-text darken-1">2) Request access to data and/or biospecimens by following these steps:</span>
                             <p style="line-height: 24px; font-size: 16px">
                                 1. <router-link class="white-text round-blue" to="/advance/projects/project">Create</router-link> and/or
                                 <router-link class="white-text round-blue" to="/advance/projects">Select</router-link> a project
@@ -742,7 +744,7 @@ let Cart = {
                     </div>
                     <div class="row" style="padding-top: 5px;">
                         <p>
-                            <input type="submit" value="Submit">  
+                            <input type="submit" value="Create Cart">
                         </p>
                     </div>
                 </form>

@@ -40,7 +40,7 @@ let state = {
             html: false
         },
         {
-            label: 'Nb-spec',
+            label: 'No. biospecimens"',
             field: 'nbSamples',
             numeric: true,
             html:false
@@ -54,7 +54,7 @@ let state = {
             html: false
         },
         {
-            label: 'EGA Access',
+            label: 'EGA Acc',
             field: 'egaAccess',
             numeric: false,
             html: false

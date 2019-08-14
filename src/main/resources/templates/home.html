@@ -43,7 +43,7 @@
             <div class="row">
                 <ul class="collection with-header task-card" style="margin: 0.4rem 0.1rem 0;">
                     <li class="collection-header h3africa">
-                        <h6 class="task-card-title">Advanced Search</h6>
+                        <h6 class="task-card-title"><a th:href="@{/filter.html}">Advanced Search</a></h6>
                     </li>
                 </ul>
             </div>
@@ -209,6 +209,41 @@
                     </div>
                     <div class="col m2">
                         <a th:href="@{/filter.html}" class="btn waves-effect right blue white-text shopping-cart">Request</a>
+                    </div>
+                </div>
+                <div class="container" v-if="cartId === null">
+                    <div class="row" style="margin: auto 0.3rem auto 0.1rem">
+                        <div id="card-alert" class="card red lighten-4">
+
+                            <div class="card-content text-darken-1">
+                                <span class="card-title pink-text darken-1">1) Do an advanced search using the search options below or</span>
+                                <span class="card-title pink-text darken-1">2) Request access to data and/or biospecimens by following these steps:</span>
+                                <p style="line-height: 24px; font-size: 16px">
+                                    1. <router-link class="white-text round-blue" to="/advance/projects/project">Create</router-link> and/or
+                                    <router-link class="white-text round-blue" to="/advance/projects">Select</router-link> a project
+                                </p>
+                                <p style="line-height: 24px; font-size: 16px">
+                                    2. <router-link class="white-text round-blue" to="/advance/carts/cart">Create</router-link> and/or
+                                    <router-link class="white-text round-blue" to="/advance/carts">Select</router-link> a cart
+                                </p>
+                                <p style="line-height: 24px; font-size: 16px">
+                                    3. <router-link class="white-text round-blue" to="/advance/carts">Filter</router-link> the catalogue
+                                    and add biospecimens and datasets to a selected cart
+                                </p>
+                                <p style="line-height: 24px; font-size: 16px">
+                                    4. View <router-link class="white-text round-blue" to="/advance/cart">Your Cart</router-link> to
+                                    edit and send a request to the DBAC
+                                </p>
+                                <div class="divider white" style="margin-top: 10px"></div>
+                                <p><i class="material-icons orange-text">warning</i> If you refresh your browser or you exit your workspace
+                                    (Filter, Projects, Carts, Your Cart), the results and parameters of your query will be lost.</p>
+                            </div>
+                            <!--<div class="card-action pink lighten-4">
+                                <router-link class="pink-text" to="/advance/carts">Ok</router-link>
+                                <a th:href="@{/logout}" class="pink-text">Cancel</a>
+                            </div>-->
+
+                        </div>
                     </div>
                 </div>
             </div>

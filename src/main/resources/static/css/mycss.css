@@ -595,3 +595,15 @@ div.text-info-filter p i {
 #operators-bmi button.clear, #operators-age button.clear {
     display: none;
 }
+
+h6 a {
+     color: #fff;
+}
+
+.red.lighten-4 {
+  background-color: #e2e8e8 !important;
+}
+
+.pink-text {
+    color: #B83F0D !important;
+}
