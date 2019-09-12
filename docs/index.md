@@ -3,129 +3,25 @@ layout: default
 ---
 
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+# Contents
 
-[Link to another page](./another-page.html).
+* [Background](./)
+* [How the catalogue functions](./)
+* [A guide to the home page](./home_page_guide.html)
+* [Searching for appropriate samples/data (Sign-in not required)](./home_page_guide.html)
+* [Requesting samples or data (Sign-in required)](./home_page_guide.html)
 
-There should be whitespace between paragraphs.
-
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
 
 # Background 
 
-The Human Heredity and Health in Africa (H3Africa) consortium has generated biospecimens and data for a variety of diseases. Access to these is controlled via a Data and Biospecimen Access Committee (DBAC). For more information on H3Africa and the research projects involved see: http://www.h3africa.org. 
-How the catalogue functions 
-The H3Africa Catalogue gives researchers the ability to browse the available samples and data from H3Africa studies, along with their descriptions, and request access to these items. 
-The information contained in the H3Africa catalogue is derived from the H3Africa Archive, which is hosted by H3ABioNet, and three H3Africa biorepositories (figure 1). 
-Figure 1: Sources of catalogue content. 
-H3Africa archive 
-The H3Africa archive acts as custodian of H3Africa genomic and phenotype data, and prepares the data for submission to public repositories such as the European Genome-phenome Archive (EGA) or the European Nucleotide Archive (ENA). This a funder requirement, and an important step in facilitating further research that could benefit study participants. 
-
+The Human Heredity and Health in Africa (H3Africa) consortium has generated biospecimens and data for a variety of diseases. Access to these is controlled via a Data and Biospecimen Access Committee (DBAC). For more information on H3Africa and the research projects involved see:
+http://h3africa.org.
 
 ## Header 2
 
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
-
-### Header 3
-
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
-
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
-```
-
-#### Header 4
-
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-
-##### Header 5
-
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
-
-###### Header 6
-
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
-### There's a horizontal rule below this.
-
-* * *
-
-### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-
-### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
-### Small image
-
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
+**Figure 1:** _Sources of catalogue content_
 
 
-### Definition lists can be used with HTML syntax.
+![Sources of catalogue content](https://drive.google.com/open?id=1-aHCj1jWmjlppPqOcdJtLf6uiPaPdPSE)
 
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
 
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-```
-The final element.
-```
