@@ -8,8 +8,8 @@ layout: default
 * [Background](./)
 * [How the catalogue functions](./)
 * [A guide to the home page](./home_page_guide.html)
-* [Browsing the catalogue using the basic search tool] (Sign-in not required)](./basic_search.html)
-* [Doing an advanced search of the catalogue] (Sign-in required)](./advanced_search.html)
+* [Browsing the catalogue using the basic search tool (Sign-in not required)](./basic_search.html)
+* [Doing an advanced search of the catalogue (Sign-in required)](./advanced_search.html)
 * [Requesting biospecimens or data (Sign-in required)](./creating_a_request.html) 
 
 </br>
