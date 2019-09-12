@@ -8,8 +8,9 @@ layout: default
 * [Background](./)
 * [How the catalogue functions](./)
 * [A guide to the home page](./home_page_guide.html)
-* [Searching for appropriate samples/data (Sign-in not required)](./home_page_guide.html)
-* [Requesting samples or data (Sign-in required)](./home_page_guide.html) 
+* [Browsing the catalogue using the basic search tool] (Sign-in not required)](./basic_search.html)
+* [Doing an advanced search of the catalogue] (Sign-in required)](./advanced_search.html)
+* [Requesting biospecimens or data (Sign-in required)](./creating_a_request.html) 
 
 </br>
 
@@ -32,3 +33,26 @@ hosted by [H3ABioNet](https://h3abionet.org/), and three H3Africa biorepositorie
 **Figure 1:** _Sources of catalogue content_
 
 <p align="center"><img src="https://drive.google.com/uc?export=view&id=1-aHCj1jWmjlppPqOcdJtLf6uiPaPdPSE" width="600" alt="centered image"/></p>
+
+</br>
+
+# H3Africa archive
+The H3Africa archive acts as custodian of H3Africa genomic and phenotype data, and prepares the
+data for submission to public repositories such as the European Genome-phenome Archive (EGA) or
+the European Nucleotide Archive (ENA). This a funder requirement, and an important step in
+facilitating further research that could benefit study participants.
+
+</br>
+
+# H3Africa biorepositories
+Samples from H3Africa studies are deposited into three H3Africa biorepositories, which are based in
+Nigeria, Uganda and South Africa:
+* [IHVN](http://www.ihvnigeria.org/)
+* [IBRH3AU](http://www.ibru.mak.ac.ug/)
+* [CLS](http://www.cls.co.za/)
+
+</br>
+
+Metadata from the archive and biorepositories are submitted to the catalogue on a monthly basis.
+The H3Africa policies for data and biospecimen access and release are described in the [H3Africa
+policy documents](https://h3africa.org/index.php/consortium/consortium-documents/).
