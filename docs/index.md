@@ -26,7 +26,4 @@ hosted by [H3ABioNet](https://h3abionet.org/), and three H3Africa biorepositorie
 
 **Figure 1:** _Sources of catalogue content_
 
-
-![Sources of catalogue content](https://drive.google.com/file/d/1-aHCj1jWmjlppPqOcdJtLf6uiPaPdPSE/view)
-
-
+<img src="https://drive.google.com/uc?export=view&id=1-aHCj1jWmjlppPqOcdJtLf6uiPaPdPSE" width="600" alt="centered image"/>
