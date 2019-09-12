@@ -17,11 +17,16 @@ layout: default
 The Human Heredity and Health in Africa (H3Africa) consortium has generated biospecimens and data for a variety of diseases. Access to these is controlled via a Data and Biospecimen Access Committee (DBAC). For more information on H3Africa and the research projects involved see:
 http://h3africa.org.
 
-## Header 2
+# How the catalogue functions
+
+The [H3Africa Catalogue](https://catalog.h3africa.org/) gives researchers the ability to browse the available samples and data from
+H3Africa studies, along with their descriptions, and request access to these items.
+The information contained in the H3Africa catalogue is derived from the H3Africa Archive, which is
+hosted by [H3ABioNet](https://h3abionet.org/), and three H3Africa biorepositories (figure 1).
 
 **Figure 1:** _Sources of catalogue content_
 
 
-![Sources of catalogue content](https://drive.google.com/open?id=1-aHCj1jWmjlppPqOcdJtLf6uiPaPdPSE)
+![Sources of catalogue content](https://drive.google.com/file/d/1-aHCj1jWmjlppPqOcdJtLf6uiPaPdPSE/view)
 
 
