@@ -7,7 +7,7 @@ layout: default
 
 </br>
 
-**Figure 3:** _An overview of the procedure for requesting data or biospecimens_
+**Figure 3:** _An overview of the procedure for requesting data or biospecimens online_
 
 <p align="center"><img src="https://drive.google.com/uc?export=view&id=1dSlnbuNDpjTTVz2PLtcKyC5tGR6PgSsL" width="600" alt="centered image"/></p>
 
@@ -27,11 +27,14 @@ NOTE: an institutional email address must be used for registration.
 
 </br>
 
-## Important notice
+## _Important notice:_ submitting a request via email
 
-After signing in, researchers can do an advanced search of catalogue content (as described in the previous section) and save their search results by clicking on the page logo at the righthand side of the results box.
+After signing in, researchers can do an advanced search of catalogue content (as described in the previous section). The search results can be saved by clicking on the page logo at the righthand side of the results box - an excel spreadsheet will be produced.
 
-To submit a request, this spreadsheet would need to be submitted, along with a project form (available as a word document). The number of biospecimens required would need to be specified as an added column in the spreadsheet.
+To submit a request via email, the following documents need to be sent to _add relevant email address_:
+- the search results spreadsheet (please specify the number of biospecimens required by adding an extra column)
+- a project form (_add link to the word document_)
+- a signed data access agreement
 
 Alternatively, the request could be completed by following the process described below:
 

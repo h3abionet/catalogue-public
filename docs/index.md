@@ -53,6 +53,6 @@ Nigeria, Uganda and South Africa:
 
 </br>
 
-Metadata from the archive and biorepositories are submitted to the catalogue on a monthly basis.
+Metadata from the archive and biorepositories are submitted to the catalogue on a monthly basis. _The metadata available vary by dataset - add information describing which filtering characteristics would be available only if the dataset has been added to the archive._
 The H3Africa policies for data and biospecimen access and release are described in the [H3Africa
 policy documents](https://h3africa.org/index.php/consortium/consortium-documents/).

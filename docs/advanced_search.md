@@ -35,11 +35,13 @@ alcohol use)
 ** "Country" refers to the origin of the sample, i.e. the participant's country of residence, which may not
 coincide with the participant's nationality.
 
+**Note:** _add information describing which filtering characteristics would be available only if the dataset has been added to the archive_
+
 </br>
 
 ## Step 3. Exporting search results
 
-Researchers can save their search results by clicking on the page logo at the righthand side of the results box.
+Researchers can save their search results by clicking on the page logo at the righthand side of the results box. This will produce an excel spreadsheet with the filtering criteria used as columns.
 
 </br>
 
