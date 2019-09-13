@@ -41,6 +41,7 @@ coincide with the participant's nationality.
 
 Researchers can save their search results by clicking on the page logo at the righthand side of the results box.
 
+</br>
 
 [back](./)
 

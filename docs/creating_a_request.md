@@ -77,6 +77,8 @@ icon.
 
 **Figure 5:** _Adding biospecimens or data items to the cart_
 
+</br>
+
 After clicking on the cart icon, a dialogue box will appear, which allows the user to specify the number
 of biospecimens required.
 
@@ -97,6 +99,8 @@ by clicking the "Request" button (figure 3). The logo at the top, right-hand cor
 then change to “Requested”.
 
 **Figure 7:** _Saving cart contents or submitting a request_
+
+</br>
 
 Once a request has been submitted, it will be reviewed by the DBAC. A response can be expected
 within about 4 weeks of submission.

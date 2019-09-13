@@ -3,7 +3,7 @@ layout: default
 ---
 
 
-## A guide to the home page
+# A guide to the home page
 
 
 [back](./)
