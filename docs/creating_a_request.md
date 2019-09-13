@@ -52,6 +52,8 @@ request for data/biospecimens.
 
 Once a project has been added, a cart can be created within it using the “CREATE CART” button.
 
+</br>
+
 ## Step 4. Filtering catalogue content by project requirements
 
 In order to identify appropriate data or biospecimens, researchers can filter catalogue content by:
