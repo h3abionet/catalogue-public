@@ -15,8 +15,12 @@ alcohol use)
 * Participant characteristics: sex, ethnicity, BMI, age, country**
 * Biospecimen characteristics: sample type (eg. DNA)
 
+</br>
+
 ** "Country" refers to the origin of the sample, i.e. the participant's country of residence, which may not
 coincide with the participant's nationality.
+
+</br>
 
 **Figure 4:** _Filtering catalogue content_
 
