@@ -40,7 +40,8 @@ Alternatively, the request could be completed by following the process described
 ## Step 2. Adding a project
 
 After signing in, click on the “CREATE PROJECT” button to access the form for adding a project.
-NOTE: A number of considerations are relevant when adding a new project. The factors listed below
+
+**NOTE:** A number of considerations are relevant when adding a new project. The factors listed below
 are documented in the 'New Project' form, which is submitted to the DBAC along with any
 request for data/biospecimens.
 * Research question being addressed and intended research methods
@@ -58,11 +59,11 @@ Once a project has been added, a cart can be created within it using the “CREA
 ## Step 4. Filtering catalogue content by project requirements
 
 In order to identify appropriate data or biospecimens, researchers can filter catalogue content by:
-* Study characteristics: study name (or “acronyms”), study design (eg. case-control, GWAS),
+* **Study characteristics:** study name (or “acronyms”), study design (eg. case-control, GWAS),
 disease, availability of specific participant metadata (smoking, diet, HIV status, blood pressure,
 alcohol use)
-* Participant characteristics: sex, ethnicity, BMI, age, country**
-* Biospecimen characteristics: sample type (eg. DNA)
+* **Participant characteristics:** sex, ethnicity, BMI, age, country**
+* **Biospecimen characteristics:** sample type (eg. DNA)
 
 ** "Country" refers to the origin of the sample, i.e. the participant's country of residence, which may not
 coincide with the participant's nationality.
