@@ -39,7 +39,7 @@ coincide with the participant's nationality.
 
 ## Step 3. Exporting search results
 
-Researchers can save their search results by clicking on the page log at the righthand side of the results box.
+Researchers can save their search results by clicking on the page logo at the righthand side of the results box.
 
 
 [back](./)
