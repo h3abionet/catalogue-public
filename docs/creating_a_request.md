@@ -11,6 +11,7 @@ layout: default
 
 <p align="center"><img src="https://drive.google.com/uc?export=view&id=1dSlnbuNDpjTTVz2PLtcKyC5tGR6PgSsL" width="600" alt="centered image"/></p>
 
+</br>
 
 ## Step 1. Creating an account
 
@@ -66,6 +67,8 @@ alcohol use)
 ** "Country" refers to the origin of the sample, i.e. the participant's country of residence, which may not
 coincide with the participant's nationality.
 
+</br>
+
 **Figure 4:** _Filtering catalogue content._
 
 </br>
@@ -75,12 +78,16 @@ coincide with the participant's nationality.
 Once appropriate data or biospecimens have been identified, they can be added to the cart using the red cart
 icon.
 
+</br>
+
 **Figure 5:** _Adding biospecimens or data items to the cart_
 
 </br>
 
 After clicking on the cart icon, a dialogue box will appear, which allows the user to specify the number
 of biospecimens required.
+
+</br>
 
 **Figure 6:** _Specifying the number of biospecimens required_
 
