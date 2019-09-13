@@ -26,9 +26,11 @@ NOTE: an institutional email address must be used for registration.
 
 </br>
 
+## NOTE
+
 After signing in, users are able to access the advanced search tool by clicking on 'filter' in the lefthand side menu or clicking on the 'filter' tab at the top righthand corner of the screen.
 
-Researchers can filter catalogue content using a variety of characteristics and save their search results by clicking on the page log at the righthand side of the results box.
+Researchers can filter catalogue content as described in the previous section and save their search results by clicking on the page log at the righthand side of the results box.
 
 To submit a request, this spreadsheet would need to be submitted, along with a project form (available as a word document). The number of biospecimens required would need to be specified as an added column in the spreadsheet.
 
