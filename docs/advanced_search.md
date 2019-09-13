@@ -5,6 +5,7 @@ layout: default
 
 # Doing an advanced search of the catalogue (Sign-in required)
 
+</br>
 
 ## Step 1. Creating an account
 
@@ -34,11 +35,11 @@ alcohol use)
 ** "Country" refers to the origin of the sample, i.e. the participant's country of residence, which may not
 coincide with the participant's nationality.
 
+</br>
+
+## Step 3. Exporting search results
+
 Researchers can save their search results by clicking on the page log at the righthand side of the results box.
-
-To submit a request, this spreadsheet would need to be submitted, along with a project form (available as a word document). The number of samples required would need to be specified as an added column in the spreadsheet.
-
-Alternatively, the request could be completed by following the process described in the next section
 
 
 [back](./)
